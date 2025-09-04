@@ -29,7 +29,7 @@ const CallScreen: React.FC<CallScreenProps> = ({
   const [isActiveCall, setIsActiveCall] = useState(isCallAnswered);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval> | undefined;
     
     if (isActiveCall) {
       // Call is active - start duration timer
